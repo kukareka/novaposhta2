@@ -1,7 +1,7 @@
 # Novaposhta API 2.0
 
 Ruby gem for Nova Poshta API 2.0.
-Nova Poshta ("Нова Пошта", "Новая Почта") is a popular local shipping provider in Ukraine (https://novaposhta.ua/).
+Nova Poshta is a popular local shipping provider in Ukraine (https://novaposhta.ua/), also known as "Нова Пошта" and "Новая Почта".
 
 ## Installation
 
@@ -11,7 +11,7 @@ Add the gem to your `Gemfile`:
 gem 'novaposhta2', github: 'kukareka/novaposhta2'
 ```
 
-And run [Bundler](http://bundler.io/):
+And don't forget to run [Bundler](http://bundler.io/):
 
 ```shell
 bundle install

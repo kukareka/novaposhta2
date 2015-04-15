@@ -1,5 +1,5 @@
 module Novaposhta2
-  module Post
+  module Post # :nodoc:
     def self.included(base)
       base.extend(self)
     end

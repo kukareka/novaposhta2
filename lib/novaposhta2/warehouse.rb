@@ -1,8 +1,9 @@
 module Novaposhta2
+  # Represents a warehouse.
   class Warehouse < Base
-    attr_reader :description, :description_ru, :ref, :number, :longtitude, :latitude
+    attr_reader :description, :description_ru, :ref, :number, :longtitude, :latitude #:nodoc:
 
-    def initialize(params)
+    def initialize(params) #:nodoc:
       @description = params['Description']
       @description_ru = params['DescriptionRu']
       @ref = params['Ref']

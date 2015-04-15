@@ -2,3 +2,5 @@
 *.idea
 Gemfile.lock
 spec/fixtures/credentials.yml
+*.gem
+doc/

@@ -1,17 +1,31 @@
 module Novaposhta2
-  class Package < Base
-    attr_accessor :address, :recipient, :options, :ref, :tracking
 
-    def initialize(address, recipient, options = {})
+  # Represents a package.
+  # == Options
+  # [cost] *Mandatory*. Cost of the package contents, for insurance needs.
+  # [description] *Mandatory*. Description of package contents.
+  # [internal_number] Internal order number.
+  # [payer_type] *Sender* of *Recipient*. Default: *Sender*.
+  # [payment_method] *Cash* or *NonCash*. Default: *Cash*.
+  # [seats] Number of boxes. Default: *1*.
+  # [volume] *Mandatory*. Volume of the package in *cm*
+  # [weight] *Mandatory*. Weight of the package in *kg*.
+
+  class Package < Base
+    attr_accessor :address, :recipient, :options, :ref, :tracking # :nodoc:
+
+    def initialize(address, recipient, options = {}) # :nodoc:
       @address = address
       @recipient = recipient
       @options = options
     end
 
+    # Get the shipping rate.
     def rate
       post('InternetDocument', 'getDocumentPrice', params)['data'][0]['Cost'].to_i
     end
 
+    # Commit the package.
     def save
       data = post('InternetDocument', 'save', params)
 
@@ -19,14 +33,17 @@ module Novaposhta2
       @tracking = data['data'][0]['IntDocNumber']
     end
 
+    # Print package markings.
     def print
       "https://my.novaposhta.ua/orders/printMarkings/orders/#{@ref}/type/html/apiKey/#{config.api_key}"
     end
 
+    # Get package tracking information.
     def track
       self.class.track(@tracking)
     end
 
+    # Get tracking information by tracking number.
     def self.track(tracking)
       post('InternetDocument', 'documentsTracking', Documents: [tracking.to_s])['data'][0]
     end
