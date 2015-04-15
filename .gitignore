@@ -1,0 +1,4 @@
+*.iml
+*.idea
+Gemfile.lock
+spec/fixtures/credentials.yml
