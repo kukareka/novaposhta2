@@ -74,3 +74,21 @@ package.track # track the package
 Novaposhta2::Package.track('123456789') # track a package by tracking number
 Novaposhta2.track('123456789') # the same
 ```
+
+## Package options
+#####cost
+*Mandatory*. Cost of the package contents, for insurance needs.
+#####description
+*Mandatory*. Description of package contents.
+#####internal_number
+Internal order number.
+#####payer_type
+*Sender* of *Recipient*. Default: *Sender*.
+#####payment_method
+*Cash* or *NonCash*. Default: *Cash*.
+#####seats
+Number of boxes. Default: *1*.
+#####volume
+*Mandatory*. Volume of the package in *cm*.
+#####weight
+*Mandatory*. Weight of the package in *kg*.

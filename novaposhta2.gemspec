@@ -1,14 +1,15 @@
 Gem::Specification.new do |s|
   s.name        = 'novaposhta2'
   s.licenses     = ['MIT']
-  s.version     = '0.0.2'
+  s.version     = '0.0.4'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Oleg Kukareka']
   s.email       = 'oleg@kukareka.com'
   s.homepage    = 'https://github.com/kukareka/novaposhta2'
   s.summary     = 'Novaposhta API 2.0'
-  s.description = 'Nova Poshta is a popular local shipping provider in Ukraine (https://novaposhta.ua/).'
+  s.description = 'Ruby wrapper for NovaPoshta API 2.0.'
   s.homepage    = 'https://github.com/kukareka/novaposhta2'
+  s.required_ruby_version = '>= 1.9'
 
   # s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'novaposhta2'
